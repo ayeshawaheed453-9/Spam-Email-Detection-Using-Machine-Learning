@@ -1,87 +1,145 @@
-# Spam Email Detection
+# 📧 Spam Email Detection Using Machine Learning
 
-This project is a complete Python machine-learning application that classifies email text as **spam** or **ham** (not spam). It uses a TF-IDF text representation and a logistic-regression classifier. The included dataset is small and intended for demonstration and testing; for production use, replace it with a larger, representative, privacy-safe dataset.
+## 📌 Project Description
 
-## Features
+Spam Email Detection is a machine learning classification project that identifies whether an email is **Spam** or **Ham (Not Spam)**.
 
-The project includes a validated CSV dataset, model training, holdout evaluation, command-line prediction, a Flask web interface, saved model and metric artifacts, and automated tests. The application does not require an external API or internet connection after dependencies are installed.
+The project uses Natural Language Processing (NLP), TF-IDF Vectorization, and Logistic Regression to analyze email text and predict its category.
 
-## Project structure
+## 🎯 Objective
+
+To build a machine learning model that automatically detects unwanted emails and classifies them as Spam or Ham.
+
+## 🧠 Algorithm and Model
+
+* **Algorithm:** Logistic Regression
+* **Text Processing:** TF-IDF Vectorization
+* **Type:** Supervised Machine Learning – Classification
+
+## 🛠️ Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* NLP
+* Flask
+* Matplotlib
+
+## 📝 Main Tasks
+
+1. Load and understand the email dataset.
+2. Clean and preprocess email text.
+3. Convert text into numerical features using TF-IDF.
+4. Train the Logistic Regression model.
+5. Evaluate model performance.
+6. Predict Spam or Ham emails.
+7. Run the model using a Flask web application.
+
+## 📂 Project Structure
 
 ```text
 spam-email-detection/
-├── app.py                         # Flask web app
-├── predict.py                     # Command-line prediction
-├── train.py                       # Train and evaluate the model
-├── requirements.txt               # Python dependencies
-├── data/emails.csv                # Labeled sample dataset
-├── models/                        # Saved model is created here
-├── reports/                       # Evaluation metrics are created here
-├── src/model.py                   # Reusable ML functions
-├── templates/index.html            # Web page
-└── tests/test_model.py             # Automated tests
+│
+├── app.py
+├── predict.py
+├── train.py
+├── requirements.txt
+├── data/
+│   └── emails.csv
+├── models/
+├── reports/
+├── src/
+│   └── model.py
+├── templates/
+│   └── index.html
+└── tests/
+    └── test_model.py
 ```
 
-## Installation
-
-Use Python 3.10 or newer. From the project directory, create a virtual environment and install the dependencies:
+## ⚙️ Installation
 
 ```bash
 python -m venv .venv
-# Linux/macOS
-source .venv/bin/activate
-# Windows PowerShell: .venv\\Scripts\\Activate.ps1
-python -m pip install --upgrade pip
+```
+
+Activate the environment on Windows:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-## Train the model
+## 🚀 How to Run
 
-Run:
+### 1. Train the Model
 
 ```bash
 python train.py
 ```
 
-This creates `models/spam_classifier.joblib` and `reports/metrics.json`. The training script uses a stratified 75/25 train/test split and reports accuracy, precision, recall, F1 score, and a confusion matrix.
-
-## Predict from the command line
-
-Train the model first, then run:
+### 2. Predict an Email
 
 ```bash
-python predict.py "Congratulations! Claim your free prize now."
+python predict.py "Congratulations! You won a free prize."
 ```
 
-You can also run `python predict.py` and paste the email when prompted.
+Example output:
 
-## Run the web app
+```text
+Prediction: spam
+```
+
+### 3. Run the Web App
 
 ```bash
-python train.py
 python app.py
 ```
 
-Open <http://127.0.0.1:5000> in a browser and paste an email message into the form.
+Open:
 
-## Run tests
-
-```bash
-python -m pytest -q
+```text
+http://127.0.0.1:5000
 ```
 
-## Dataset format
+## 📊 Results
 
-To use your own data, replace `data/emails.csv` with a CSV containing exactly these required columns:
+The model generates the following evaluation metrics:
 
-```csv
-label,text
-ham,"Your appointment is confirmed for Friday."
-spam,"You won a cash prize. Click now!"
-```
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* Confusion Matrix
 
-Labels must be `ham` or `spam`. Do not train on sensitive personal email content without appropriate consent, privacy controls, and data governance.
+**Actual results are generated after running `python train.py`.**
 
-## Limitations
+## 📧 Example Prediction
 
-The included dataset is intentionally small, so its evaluation score is not a reliable estimate of real-world performance. A production classifier should use a larger dataset, a separate validation set, threshold tuning, monitoring for concept drift, and a review path for uncertain messages. Never rely on this demo alone for high-impact decisions.
+| Email                                       | Prediction |
+| ------------------------------------------- | ---------- |
+| Congratulations! Claim your free prize now! | Spam       |
+| Your appointment is confirmed for Friday.   | Ham        |
+
+## ⚠️ Limitations
+
+The included dataset is small and intended for demonstration and testing. The model may not perform reliably on all real-world emails.
+
+## 🔮 Future Improvements
+
+* Use a larger dataset.
+* Compare different machine learning algorithms.
+* Improve text preprocessing.
+* Enhance the Flask web interface.
+
+## 👩‍💻 Author
+
+**Ayesha**
+
+Machine Learning | Data Analytics | Python
+
