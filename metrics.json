@@ -1,0 +1,20 @@
+{
+  "dataset_size": 40,
+  "train_size": 30,
+  "test_size": 10,
+  "accuracy": 0.6,
+  "precision": 0.6,
+  "recall": 0.6,
+  "f1_score": 0.6,
+  "confusion_matrix": [
+    [
+      3,
+      2
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n         ham       0.60      0.60      0.60         5\n        spam       0.60      0.60      0.60         5\n\n    accuracy                           0.60        10\n   macro avg       0.60      0.60      0.60        10\nweighted avg       0.60      0.60      0.60        10\n"
+}
